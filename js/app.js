@@ -1,5 +1,9 @@
 const token = localStorage.getItem("token");
 
+if (!token) {
+    window.location.href = "index.html";
+}
+
 fetch(API_BASE_URL + "/dashboard/summary", {
 
     headers: {
@@ -18,41 +22,38 @@ fetch(API_BASE_URL + "/dashboard/summary", {
 })
 .then(data => {
 
-    console.log("Dashboard data:", data);
+    document.getElementById("totalEmployees").textContent =
+        data.totalEmployees;
 
-    document.getElementById("dashboardData").innerHTML = `
-        <div class="row">
+    document.getElementById("totalProducts").textContent =
+        data.totalProducts;
 
-            <div class="col-md-3 mb-3">
-                <div class="card p-3">
-                    <h5>Employees</h5>
-                    <h2>${data.totalEmployees}</h2>
-                </div>
-            </div>
+    document.getElementById("totalCustomers").textContent =
+        data.totalCustomers;
 
-            <div class="col-md-3 mb-3">
-                <div class="card p-3">
-                    <h5>Products</h5>
-                    <h2>${data.totalProducts}</h2>
-                </div>
-            </div>
-            
-            <div class="col-md-3 mb-3">
-                <div class="card p-3">
-                    <h5>Customers</h5>
-                    <h2>${data.totalCustomers}</h2>
-                </div>
-            </div>
+    document.getElementById("totalSuppliers").textContent =
+        data.totalSuppliers;
 
-            <div class="col-md-3 mb-3">
-                <div class="card p-3">
-                    <h5>Warehouses</h5>
-                    <h2>${data.totalWarehouses}</h2>
-                </div>
-            </div>
+    document.getElementById("totalWarehouses").textContent =
+        data.totalWarehouses;
 
-        </div>
-    `;
+    document.getElementById("totalPurchaseOrders").textContent =
+        data.totalPurchaseOrders;
+
+    document.getElementById("totalSalesOrders").textContent =
+        data.totalSalesOrders;
+
+    document.getElementById("totalInvoices").textContent =
+        data.totalInvoices;
+
+    document.getElementById("totalSales").textContent =
+        "৳" + data.totalSales;
+
+    document.getElementById("totalPurchases").textContent =
+        "৳" + data.totalPurchases;
+
+    document.getElementById("totalOutstanding").textContent =
+        "৳" + data.totalOutstanding;
 
 })
 .catch(error => {
@@ -60,3 +61,10 @@ fetch(API_BASE_URL + "/dashboard/summary", {
     console.error(error);
 
 });
+
+function logout() {
+
+    localStorage.removeItem("token");
+
+    window.location.href = "index.html";
+}

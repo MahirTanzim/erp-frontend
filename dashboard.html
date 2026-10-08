@@ -19,13 +19,247 @@
 
 <body>
 
-    <div class="container mt-5">
+    <div class="d-flex">
 
-        <h1>ERP Dashboard</h1>
+        <!-- Sidebar -->
+        <div class="bg-dark text-white p-3" style="width: 240px; min-height: 100vh;">
 
-        <div id="dashboardData" class="mt-4"></div>
+            <h4 class="mb-4">ERP System</h4>
+
+            <ul class="nav flex-column">
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="dashboard.html">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Employees
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Departments
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Products
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Inventory
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Warehouses
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Suppliers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Purchase Orders
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Customers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Sales Orders
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Invoices
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Payments
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Users
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">
+                        Audit Logs
+                    </a>
+                </li>
+
+            </ul>
+
+            <hr>
+
+            <button
+                class="btn btn-outline-light w-100"
+                onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="flex-grow-1">
+
+            <nav class="navbar bg-light border-bottom px-4">
+                <span class="navbar-brand">
+                    Dashboard
+                </span>
+            </nav>
+
+
+            <div class="container-fluid p-4">
+
+                <div class="row">
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Employees</h6>
+                                <h2 id="totalEmployees">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Products</h6>
+                                <h2 id="totalProducts">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Customers</h6>
+                                <h2 id="totalCustomers">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Suppliers</h6>
+                                <h2 id="totalSuppliers">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Warehouses</h6>
+                                <h2 id="totalWarehouses">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Purchase Orders</h6>
+                                <h2 id="totalPurchaseOrders">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Sales Orders</h6>
+                                <h2 id="totalSalesOrders">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Invoices</h6>
+                                <h2 id="totalInvoices">0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Total Sales</h6>
+                                <h2 id="totalSales">৳0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Total Purchases</h6>
+                                <h2 id="totalPurchases">৳0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6>Total Outstanding</h6>
+                                <h2 id="totalOutstanding">৳0</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
+
 
     <script src="js/api.js"></script>
     <script src="js/app.js"></script>
