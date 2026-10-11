@@ -150,24 +150,19 @@ async function addInventory() {
         });
 
         if (!response.ok) {
-            let message = "Could not save inventory (HTTP " + response.status + ")";
-
-            try {
-                const result = await response.json();
-                message = result.message || message;
-            } catch (_) { }
-
-            throw new Error(message);
-        }
-
-        document.getElementById("quantity").value = "";
-
-        bootstrap.Modal.getOrCreateInstance(
-            document.getElementById("addInventoryModal")
-        ).hide();
-
-        await loadInventory();
-    } catch (error) {
+        let message = "Could not save inventory (HTTP " + response.status + ")";
+        try {
+            const result = await response.json();
+            message = result.message || message;
+        } catch (_) { }
+        throw new Error(message);
+    }
+    document.getElementById("quantity").value = "";
+    bootstrap.Modal.getOrCreateInstance(
+        document.getElementById("addInventoryModal")
+    ).hide();
+    await loadInventory();
+} catch (error) {
         console.error("Inventory save error:", error);
         showInventoryError(error.message, "formError");
     }

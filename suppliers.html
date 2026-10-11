@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers - ERP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="d-flex">
+    <aside class="bg-dark text-white p-3" style="width:250px;min-height:100vh;">
+        <h4 class="mb-4">ERP System</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-white" href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="employees.html">Employees</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="departments.html">Departments</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="inventory.html">Inventory</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="warehouses.html">Warehouses</a></li>
+            <li class="nav-item"><a class="nav-link text-white active" href="suppliers.html">Suppliers</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="purchase-orders.html">Purchase Orders</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Customers</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Sales Orders</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Invoices</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Payments</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Users</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Audit Logs</a></li>
+            <li class="nav-item mt-3">
+                <button class="btn btn-danger w-100" onclick="logout()">Logout</button>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="flex-grow-1 p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Suppliers</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#supplierModal">Add Supplier</button>
+        </div>
+
+        <div id="supplierError" class="alert alert-danger d-none"></div>
+
+        <div class="card">
+            <div class="card-body table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Supplier Code</th>
+                        <th>Name</th>
+                        <th>Contact Person</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody id="supplierTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="modal fade" id="supplierModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Supplier</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <div id="supplierFormError" class="alert alert-danger d-none"></div>
+
+                <form id="supplierForm">
+                    <div class="mb-3">
+                        <label for="supplierCode" class="form-label">Supplier Code *</label>
+                        <input id="supplierCode" class="form-control" required
+                               placeholder="SUP005">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="supplierName" class="form-label">Supplier Name *</label>
+                        <input id="supplierName" class="form-control" required
+                               placeholder="Supplier company name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contactPerson" class="form-label">Contact Person</label>
+                        <input id="contactPerson" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="supplierEmail" class="form-label">Email</label>
+                        <input id="supplierEmail" type="email" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="supplierPhone" class="form-label">Phone</label>
+                        <input id="supplierPhone" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="supplierAddress" class="form-label">Address</label>
+                        <textarea id="supplierAddress" class="form-control" rows="2"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="addSupplier()">Save Supplier</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/supplier.js"></script>
+</body>
+</html>
+
