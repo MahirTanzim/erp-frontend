@@ -4,11 +4,6 @@ if (!token) {
     window.location.href = "index.html";
 }
 
-
-/* =========================
-   LOAD DEPARTMENTS
-========================= */
-
 function loadDepartments() {
 
     fetch(API_BASE_URL + "/departments", {
@@ -91,11 +86,6 @@ function loadDepartments() {
 
 
 loadDepartments();
-
-
-/* =========================
-   ADD DEPARTMENT
-========================= */
 
 document
     .getElementById("addDepartmentForm")
