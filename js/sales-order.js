@@ -1,5 +1,5 @@
 
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = API_BASE_URL;
 
 const orderForm = document.getElementById("salesOrderForm");
 const orderTableBody = document.getElementById("salesOrderTableBody");

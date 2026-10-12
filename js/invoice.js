@@ -1,5 +1,5 @@
 
-const INVOICE_API = "http://localhost:8080/api";
+const INVOICE_API = API_BASE_URL;
 
 const invoiceForm = document.getElementById("invoiceForm");
 const invoiceTableBody = document.getElementById("invoiceTableBody");
@@ -164,4 +164,3 @@ document.getElementById("invoiceDate").value =
         invoiceShowMessage(messageBox, error.message, "danger");
     }
 })();
-

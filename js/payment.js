@@ -1,5 +1,5 @@
 
-const PAYMENT_API = "http://localhost:8080/api";
+const PAYMENT_API = API_BASE_URL;
 
 const paymentForm = document.getElementById("paymentForm");
 const paymentTableBody = document.getElementById("paymentTableBody");
@@ -159,4 +159,3 @@ document.getElementById("paymentDate").value =
         paymentMessage(messageBox, error.message, "danger");
     }
 })();
-

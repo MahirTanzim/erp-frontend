@@ -1,4 +1,4 @@
-const USER_API = "http://localhost:8080/api";
+const USER_API = API_BASE_URL;
 
 const userForm = document.getElementById("userForm");
 const userTableBody = document.getElementById("userTableBody");
@@ -205,4 +205,3 @@ userModalElement.addEventListener("hidden.bs.modal", () => {
 });
 
 loadUsers();
-

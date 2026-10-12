@@ -26,7 +26,6 @@ function login() {
         localStorage.setItem("token", token);
 
         console.log("Login successful");
-        console.log("JWT:", token);
 
         window.location.href = "dashboard.html";
     })

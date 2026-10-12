@@ -1,5 +1,5 @@
 
-const AUDIT_API = "http://localhost:8080/api";
+const AUDIT_API = API_BASE_URL;
 
 const auditTableBody = document.getElementById("auditLogTableBody");
 const auditMessage = document.getElementById("message");
@@ -150,4 +150,3 @@ document.getElementById("refreshLogs").addEventListener("click", async () => {
 });
 
 loadAuditLogs();
-

@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:8080/api/customers";
+const API_URL = `${API_BASE_URL}/customers`;
 
 const customerForm = document.getElementById("customerForm");
 const customerTableBody = document.getElementById("customerTableBody");
