@@ -113,7 +113,7 @@ paymentForm.addEventListener("submit", async event => {
         paymentDate: document.getElementById("paymentDate").value,
         reference: document.getElementById("reference").value.trim() || null
     };
-
+    
     try {
         const response = await fetch(`${PAYMENT_API}/payments`, {
             method: "POST",
