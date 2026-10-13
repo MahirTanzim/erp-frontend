@@ -1,3 +1,8 @@
+document.getElementById("loginForm").addEventListener("submit", event => {
+    event.preventDefault();
+    login();
+});
+
 function login() {
 
     const username = document.getElementById("username").value;

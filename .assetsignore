@@ -1,0 +1,7 @@
+
+**/.git
+**/.git/**
+.gitignore
+wrangler.jsonc
+.env*
+.dev.vars*

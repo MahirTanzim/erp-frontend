@@ -26,52 +26,62 @@
 
                     <div class="card-body">
 
-                        <h2 class="text-center mb-4">
+                        <h2 class="text-center mb-2">
                             ERP Login
                         </h2>
-
-                        <div class="mb-3">
-
-                            <label class="form-label">
-                                Username
-                            </label>
-
-                            <input
-                                type="text"
-                                id="username"
-                                class="form-control"
-                                placeholder="Enter username"
-                            >
-
-                        </div>
-
-                        <div class="mb-3">
-
-                            <label class="form-label">
-                                Password
-                            </label>
-
-                            <input
-                                type="password"
-                                id="password"
-                                class="form-control"
-                                placeholder="Enter password"
-                            >
-
-                        </div>
-
-                        <button
-                            class="btn btn-primary w-100"
-                            onclick="login()">
-
-                            Login
-
-                        </button>
-
-                        <p
-                            id="loginError"
-                            class="text-danger text-center mt-3">
+                        <p class="text-center text-secondary mb-4">
+                            Sign in to your workspace
                         </p>
+
+                        <form id="loginForm">
+                            <div class="mb-3">
+
+                                <label for="username" class="form-label">
+                                    Username
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="username"
+                                    class="form-control"
+                                    placeholder="Enter username"
+                                    autocomplete="username"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label for="password" class="form-label">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="form-control"
+                                    placeholder="Enter password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100">
+
+                                Login
+
+                            </button>
+
+                            <p
+                                id="loginError"
+                                class="text-danger text-center mt-3"
+                                role="alert">
+                            </p>
+                        </form>
 
                     </div>
 

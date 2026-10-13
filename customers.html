@@ -10,115 +10,45 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="container-fluid">
-        <div class="row min-vh-100">
-
-            <!-- Sidebar -->
-            <aside class="col-md-2 bg-dark text-white p-3">
-                <h4 class="mb-4">Mini ERP</h4>
-
-                <div class="bg-dark text-white p-3" style="width: 240px; min-height: 100vh;">
-
-                    <h4 class="mb-4">ERP System</h4>
-
-                    <ul class="nav flex-column">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="dashboard.html">
-                                Dashboard
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="employees.html">
-                                Employees
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="departments.html">
-                                Departments
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="products.html">
-                                Products
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="inventory.html">
-                                Inventory
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="warehouses.html">
-                                Warehouses
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="suppliers.html">
-                                Suppliers
-                            </a>
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link text-white" href="purchase-orders.html">Purchase
-                                Orders</a></li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="customers.html">
-                                Customers
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="sales-orders.html">
-                                Sales Orders
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="invoices.html">
-                                Invoices
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="payment.html">
-                                Payments
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="users.html">
-                                Users
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="audit-logs.html">
-                                Audit Logs
-                            </a>
-                        </li>
-
-                    </ul>
-
-                    <hr>
-
-                    <button class="btn btn-outline-light w-100" onclick="logout()">
-                        Logout
-                    </button>
-
+<body class="erp-page">
+    <div class="erp-layout">
+        <aside class="sidebar offcanvas-md offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+            <div class="offcanvas-header sidebar-header d-md-none">
+                <a class="brand" href="dashboard.html" id="sidebarLabel"><span class="brand-mark">E</span><span>Mini ERP</span></a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close navigation"></button>
+            </div>
+            <div class="offcanvas-body sidebar-body">
+                <a class="brand d-none d-md-flex" href="dashboard.html"><span class="brand-mark">E</span><span>Mini ERP</span></a>
+                <div class="sidebar-label">WORKSPACE</div>
+                <nav class="nav flex-column sidebar-nav" aria-label="Main navigation">
+                    <a class="nav-link" href="dashboard.html"><span class="nav-icon" aria-hidden="true">▦</span>Dashboard</a>
+                    <a class="nav-link" href="employees.html"><span class="nav-icon" aria-hidden="true">♙</span>Employees</a>
+                    <a class="nav-link" href="departments.html"><span class="nav-icon" aria-hidden="true">▤</span>Departments</a>
+                    <a class="nav-link" href="products.html"><span class="nav-icon" aria-hidden="true">◈</span>Products</a>
+                    <a class="nav-link" href="inventory.html"><span class="nav-icon" aria-hidden="true">▣</span>Inventory</a>
+                    <a class="nav-link" href="warehouses.html"><span class="nav-icon" aria-hidden="true">⌂</span>Warehouses</a>
+                    <a class="nav-link" href="suppliers.html"><span class="nav-icon" aria-hidden="true">⇄</span>Suppliers</a>
+                    <a class="nav-link" href="purchase-orders.html"><span class="nav-icon" aria-hidden="true">▧</span>Purchase Orders</a>
+                    <a class="nav-link active" aria-current="page" href="customers.html"><span class="nav-icon" aria-hidden="true">♧</span>Customers</a>
+                    <a class="nav-link" href="sales-orders.html"><span class="nav-icon" aria-hidden="true">▤</span>Sales Orders</a>
+                    <a class="nav-link" href="invoices.html"><span class="nav-icon" aria-hidden="true">▨</span>Invoices</a>
+                    <a class="nav-link" href="payment.html"><span class="nav-icon" aria-hidden="true">＄</span>Payments</a>
+                    <a class="nav-link" href="users.html"><span class="nav-icon" aria-hidden="true">♟</span>Users</a>
+                    <a class="nav-link" href="audit-logs.html"><span class="nav-icon" aria-hidden="true">◷</span>Audit Logs</a>
+                </nav>
+                <div class="sidebar-bottom"><div class="sidebar-divider"></div><button type="button" class="btn sidebar-logout" onclick="logout()"><span class="nav-icon" aria-hidden="true">↪</span>Sign out</button></div>
+            </div>
+        </aside>
+        <div class="erp-main">
+            <header class="topbar navbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn menu-toggle d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open navigation"><span></span><span></span><span></span></button>
+                    <div><div class="topbar-eyebrow">MINI ERP / WORKSPACE</div><h1 class="topbar-title">ERP Workspace</h1></div>
                 </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="col-md-10 p-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="topbar-actions"><span class="status-pill"><span class="status-dot"></span>Workspace</span><button type="button" class="btn btn-sm btn-outline-secondary d-none d-sm-inline-flex" onclick="logout()">Sign out</button></div>
+            </header>
+            <main class="page-content">
+<div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0">Customers</h2>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -164,12 +94,7 @@
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- Add Customer Modal -->
-    <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
+<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
 
@@ -231,12 +156,14 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/customer.js"></script>
-    <script src="js/layout.js"></script>
+            </main>
+            <footer class="page-footer"><span>© 2026 Mini ERP</span><span>Business operations workspace</span></footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/customer.js"></script>
 </body>
 
 </html>
